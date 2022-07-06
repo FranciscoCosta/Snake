@@ -5,10 +5,13 @@ const btnReset = document.getElementById("reset");
 const gameWith = gameBoard.width;
 const gameHeight = gameBoard.height;
 console.log(scoreTxt);
+
+const bordC = "rgba(46, 229, 157)";
+
 const boardBg = "black";
-const snakeColor = "lime";
-const snakeBorder = "crimson";
-const foodColor = "blue";
+const snakeColor = "#2ee59d";
+const snakeBorder = bordC;
+const foodColor = "red";
 const unisteSize = 25;
 let running = false;
 let xVel = unisteSize;
@@ -157,6 +160,7 @@ function displayGameOver() {
 }
 function resestGame() {
     window.score = 0;
+    scoreTxt.innerText = window.score;
     xVel = unisteSize;
     yVel = 0;
     snake = [
