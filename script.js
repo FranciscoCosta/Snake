@@ -1,10 +1,10 @@
 const gameBoard = document.getElementById("game-board");
 const ctx = gameBoard.getContext("2d");
-const scoreTxt = document.getElementsByClassName("score");
+const scoreTxt = document.getElementById("score");
 const btnReset = document.getElementById("reset");
 const gameWith = gameBoard.width;
 const gameHeight = gameBoard.height;
-
+console.log(scoreTxt);
 const boardBg = "black";
 const snakeColor = "lime";
 const snakeBorder = "crimson";
@@ -79,6 +79,7 @@ function moveSnake() {
     snake.unshift(head);
     if(snake[0].x === foodX && snake[0].y === foodY){
         window.score =window.score+1
+        scoreTxt.innerText = window.score;
         createFood();
 
     }else{
@@ -167,7 +168,7 @@ function resestGame() {
       ];
       gameStart();
 }
-scoreTxt.innertext = window.score;
+
 
 var keys = {};
 window.addEventListener("keydown",
